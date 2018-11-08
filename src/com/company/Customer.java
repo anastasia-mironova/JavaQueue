@@ -1,26 +1,31 @@
 package com.company;
 
-import java.util.Comparator;
+/*
+ * Comparator для класса Customer
+ *
+ * @version 1.1 01 Nov 2018
+ * @author Anastasia Mironova
+ */
 
 public class Customer  {
-    public final int FEMALE_RETIREMENT_AGE = 55;
-    public final int MALE_RETIREMENT_AGE = 60;
-    public String sex;
+    private final int FEMALE_RETIREMENT_AGE = 55;
+    private final int MALE_RETIREMENT_AGE = 60;
+    private String sex;
     public int age;
     public String name;
-  //  public int retirementAge;
-    Customer(int age, String name, String sex){
-        this.age = age;
-        this.name = name;
-        this.sex = sex;
+
+    Customer(int _age, String _name, String _sex) {
+        this.age = _age;
+        this.name = _name;
+        this.sex = _sex;
     }
 
-    public int getRetirementAge(){
+    public int getRetirementAge() {
         if (this.sex.equals("f")) {
-          return FEMALE_RETIREMENT_AGE;
+          return this.FEMALE_RETIREMENT_AGE;
         }
-        if (this.sex.equals("m")){
-           return MALE_RETIREMENT_AGE;
+        if (this.sex.equals("m"))  {
+           return this.MALE_RETIREMENT_AGE;
         }
 
         throw new IllegalArgumentException("Unknown sex");
